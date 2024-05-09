@@ -1,0 +1,72 @@
+/* Small Screen */
+.container {
+    font-family: 'montserrat', sans-serif;
+    margin: 4rem 1rem;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.table__title {
+    font-size: 2.44rem;
+    color: #6C63FF;
+}
+
+.table__sub__title {
+    font-size: 1rem;
+    color: #6C63FF;
+    margin-bottom: 2rem; 
+}
+
+.table__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    overflow-x: auto; 
+}
+
+table {
+    width: 100%; 
+    margin: 0 auto 2rem auto;
+    border-collapse: collapse;
+    border: 2px solid #1a6adb;
+    overflow-x: auto; 
+}
+
+table thead {
+    background-color: #6C63FF;
+    color: #fff;
+}
+
+table tbody {
+    background-color: #f9f9f9;
+}
+
+th, td {
+    border: 2px solid #1a6adb;
+    text-align: center;
+    padding: 0.5rem 1rem;
+}
+
+table th:first-child,
+table td:first-child {
+    width: 100px; 
+    min-width: 100px; 
+}
+
+/* Medium Screen */
+@media (min-width: 768px) {
+    table {
+        width: 90%; 
+    }
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+    table {
+        width: 60%; 
+    }
+}
