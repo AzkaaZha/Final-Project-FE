@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import styles from './Form.module.css';
 import data from '../../utils/constants/provinces';
+import { Heading } from '../UI/Typography/Typography';
+import Button from '../UI/Button/Button';
+import { FormLeftStyled, FormRightStyled, FormStyled } from './Form.styled';
 
 function Form({ AddData }) {
     const [formData, setFormData] = useState({
@@ -27,17 +29,16 @@ function Form({ AddData }) {
     }
 
     return (
-        <div className={styles.container}>
-            <section className={styles.form}>
-                <div className={styles.form__left}>
-                    <img className={styles.form__image} src="/assets/formimg.png" alt="placeholder" />
-                </div>
-                <div className={styles.form__right}>
-                    <h2 className={styles.form__title}>Form Data Covid</h2>
+        <FormStyled>
+            <section>
+                <FormLeftStyled>
+                    <img src="/assets/formimg.png" alt="placeholder" />
+                </FormLeftStyled>
+                <FormRightStyled>
+                    <Heading>Form Data Covid</Heading>
                     <form onSubmit={handleSubmit}>
-                        <label className={styles.form__label}>Provinsi</label><br />
+                        <label>Provinsi</label><br />
                         <select
-                            className={styles.form__input}
                             name="provinsi"
                             value={formData.provinsi}
                             onChange={handleChange}
@@ -48,9 +49,8 @@ function Form({ AddData }) {
                             ))}
                         </select><br />
 
-                        <label className={styles.form__label}>Status</label><br />
+                        <label>Status</label><br />
                         <select
-                            className={styles.form__input}
                             name="status"
                             value={formData.status}
                             onChange={handleChange}
@@ -62,20 +62,20 @@ function Form({ AddData }) {
                             <option value="dirawat">Dirawat</option>
                         </select><br />
 
-                        <label className={styles.form__label}>Jumlah</label><br />
+                        <label>Jumlah</label><br />
                         <input
                             type="number"
                             placeholder="Masukkan Jumlah"
-                            className={styles.form__input}
                             name="jumlah"
                             value={formData.jumlah}
                             onChange={handleChange}
                         />
-                        <button type="submit" className={styles.form__button}>Submit</button>
+                        <br />
+                        <Button>Submit</Button>
                     </form>
-                </div>
+                </FormRightStyled>
             </section>
-        </div>
+        </FormStyled>
     );
 }
 

@@ -1,24 +1,31 @@
-import styles from "./Card.module.css";
-import data from "../../utils/constants/indonesia";
+import { Heading, Paragraph } from "../UI/Typography/Typography";
+import { StyledCard, CardStyle, CardGrid } from "./Card.styled";
+import Global from "../Global/Global";
+import Region from "../Region/Region";
 import Indonesia from "../Indonesia/Indonesia";
 
-
-function Card(){
-
-    const { indonesia } = data;
+function Card(props) {
+    const { data, title, subtitle, type } = props;
 
     return (
-        <div className={styles.container}>
-            <section className={styles.card}>
-                <h1 className={styles.card__title}>Indonesia</h1>
-                <p className={styles.card__sub__title}>Data Covid berdasarkan Indonesia</p>
-                <main className={styles.card__grid}>
-                    {indonesia.map((item) => {
-                        return <Indonesia key={item.status} data={item} />;
-                    })}
-                </main>
-            </section>
-        </div>
+        <StyledCard>
+            <Heading>{title}</Heading>
+            <Paragraph>{subtitle}</Paragraph>
+            <CardStyle>
+                <CardGrid>
+                    {type === "global" && data.map((item, index) => (
+                        <Global key={index} global={item} />
+                    ))}
+                    {type === "region" && data.map((item, index) => (
+                        <Region key={index} region={item} />
+                    ))}
+                    {type === "indonesia" && data.map((item, index) => (
+                        <Indonesia key={index} indonesia={item} />
+                    ))}
+
+                </CardGrid>
+            </CardStyle>
+        </StyledCard>
     );
 }
 

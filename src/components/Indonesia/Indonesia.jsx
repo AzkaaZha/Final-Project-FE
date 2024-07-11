@@ -1,19 +1,15 @@
-import styles from "./Indonesia.module.css";
+/* eslint-disable react/prop-types */
+import StyledIndonesia from "./Indonesia.styled";
 
-function Indonesia({ data }) {
-    const { status, total, color } = data;
+function Indonesia(props) {
 
-    const statusStyle = { color: color };
-
-    const formattedTotal = total.toLocaleString();
+    const { indonesia } = props;
 
     return (
-        <div className={styles.card__warp}>
-            <div className={styles.warp__title}>
-                <h2 style={statusStyle}>{status}</h2>
-                <p style={statusStyle}>{formattedTotal}</p>
-            </div>
-        </div>
+        <StyledIndonesia status={indonesia.status}>
+            <h3>{indonesia.status}</h3>
+            <h2>{indonesia.total.toLocaleString()}</h2>
+        </StyledIndonesia>
     );
 }
 

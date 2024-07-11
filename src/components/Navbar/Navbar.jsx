@@ -1,26 +1,30 @@
-import styles from './Navbar.module.css';
+import { NavLink } from "react-router-dom";
+import { StyledHeader } from "./Navbar.styled";
 
 function Navbar() {
     return (
-        <div className={styles.header}>
-            <div className={styles.container}>
-                <nav className={styles.navbar}>
-                    <div>
-                    <img className={styles.navbar__logo} src="/assets/logo.png" alt="logo" />
-                    </div>
-             
-                    <div>
-                        <ul className={styles.navbar__list}>
-                            <li className={styles.navbar__item}>Home</li>
-                            <li className={styles.navbar__item}>Global</li>
-                            <li className={styles.navbar__item}>Indonesia</li>
-                            <li className={styles.navbar__item}>Provinsi</li>
-                            <li className={styles.navbar__item}>About</li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+        <StyledHeader>
+            <nav>
+                <div><img src="/assets/logo.png" alt="logo" /></div>
+            
+                <div>
+                    <ul>
+                        <li>
+                            <NavLink to="/" exact activeClassName="active">Global</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/Indonesia" activeClassName="active">Indonesia</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/Provinsi" activeClassName="active">Provinsi</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/About" activeClassName="active">About</NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </StyledHeader>
     );
 }
 

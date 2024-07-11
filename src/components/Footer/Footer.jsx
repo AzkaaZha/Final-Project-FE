@@ -1,26 +1,26 @@
-import styles from './Footer.module.css';
+import { Paragraph } from '../UI/Typography/Typography';
+import { FooterStyled } from './Footer.styled';
 
 function Footer(){
     return (
-        <div className={styles.container}>
-            <footer className={styles.footer}>
+        <FooterStyled>
+            <section>
                     <div>
-                        <img className={styles.footer__logo} src="/assets/logo.png" alt="logo" />
-                        <p className={styles.footer__description}>2024 All Rights Reserved. By Zharari.Azka</p>
+                        <img src="/assets/logo.png" alt="logo" />
+                        <Paragraph color="#ffffff">2024 All Rights Reserved. By Zharari.Azka</Paragraph>
                     </div>
-                    
 
                     <div>
-                        <ul className={styles.footer__list}>
-                            <li className={styles.footer__item}>Home</li>
-                            <li className={styles.footer__item}>Global</li>
-                            <li className={styles.footer__item}>Indonesia</li>
-                            <li className={styles.footer__item}>Provinsi</li>
-                            <li className={styles.footer__item}>About</li>
+                        <ul>
+                            <li>Home</li>
+                            <li>Global</li>
+                            <li>Indonesia</li>
+                            <li>Provinsi</li>
+                            <li>About</li>
                         </ul>
                     </div>
-            </footer>
-        </div>
+            </section>
+        </FooterStyled>
     );
 }
 

@@ -1,24 +1,22 @@
-import styles from './Hero.module.css';
+import Button from '../UI/Button/Button';
+import { Heading, Paragraph, SubHeading } from '../UI/Typography/Typography';
+import { StyledHero, StyledHeroLeft} from './Hero.styled';
+
 
 function Hero() {
     return (
-        <div className={styles.container}>
-            <section className={styles.hero}>
-                <div className={styles.hero__left}>
-                    <h1 className={styles.hero__title}>COVIDCARE</h1>
-                    <h3 className={styles.hero__sub_title}>Monitoring Perkembangan Covid</h3>
-                    <p className={styles.hero__description}>
+        <StyledHero>
+            <section>
+                <StyledHeroLeft>
+                    <Heading color="#FFD60A">COVIDCARE</Heading>
+                    <SubHeading color="#CAF0F8">Monitoring Perkembangan Covid</SubHeading>
+                    <Paragraph color="#CAF0F8">
                         CovidCare adalah sebuah sistem informasi yang dirancang untuk memantau dan melacak jumlah kasus COVID-19 secara real-time. Dengan menggunakan teknologi terkini, aplikasi ini memungkinkan pengguna untuk mengakses informasi terbaru tentang jumlah kasus positif, pemulihan, dan kematian akibat COVID-19 di wilayah tertentu. 
-                    </p>
-                    <button className={styles.hero__button}>Vaccine</button>
-                </div>
-                <div className={styles.hero__right}>
-                    <img
-                    className={styles.hero__image} 
-                    src="/assets/heroimg.png" alt="placeholder" />
-                </div>
+                    </Paragraph>
+                    <Button>Vaccine</Button>
+                </StyledHeroLeft>
             </section>
-        </div>
+        </StyledHero>
     );
 }
 

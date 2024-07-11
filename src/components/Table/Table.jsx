@@ -1,14 +1,16 @@
-import styles from './Table.module.css';
+import { TableSection } from '../UI/Table/Table';
+import { Heading, Paragraph } from '../UI/Typography/Typography';
+import { StyledTable } from './Table.styled';
 
-function Table({ provinceData }) {
+function Table({ title = "Provinsi", subtitle = "Data Covid berdasarkan Provinsi", tableData = [] }) {
     return (
-        <div className={styles.container}>
-            <section className={styles.section}>
+        <StyledTable>
+            <section>
                 <div>
-                    <h1 className={styles.table__title}>Provinsi</h1>
-                    <p className={styles.table__sub__title}>Data Covid berdasarkan Provinsi</p>
+                    <Heading>{title}</Heading>
+                    <Paragraph>{subtitle}</Paragraph>
                 </div>
-                <div className={styles.table__container}>
+                <TableSection>
                     <table>
                         <thead>
                             <tr>
@@ -21,7 +23,7 @@ function Table({ provinceData }) {
                             </tr>
                         </thead>
                         <tbody>
-                            {provinceData.map((province, index) => (
+                            {tableData.map((province, index) => (
                                 <tr key={index}>
                                     <td>{index + 1}</td>
                                     <td>{province.provinsi}</td>
@@ -33,9 +35,9 @@ function Table({ provinceData }) {
                             ))}
                         </tbody>
                     </table>
-                </div>
+                </TableSection>
             </section>
-        </div>
+        </StyledTable>
     );
 }
 
